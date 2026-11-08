@@ -7,7 +7,7 @@ export function Rodape() {
     <footer className="no-escuro bg-noite pb-28 text-white md:pb-0">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center md:justify-between md:px-6">
         <div className="flex items-center gap-4">
-          <span className="rounded-2xl bg-white p-2">
+          <span className="shrink-0 rounded-2xl bg-white p-2">
             <Image src={logo} alt="" width={56} height={44} className="h-11 w-auto" />
           </span>
           <p className="text-base">

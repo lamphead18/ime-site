@@ -1,14 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible_Next, Baloo_2 } from "next/font/google";
+import { Atkinson_Hyperlegible, Baloo_2 } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
 // Atkinson Hyperlegible foi desenhada para leitura com baixa visão:
 // letras que não se confundem (I/l/1, O/0) ajudam também crianças e famílias em alfabetização.
-const atkinson = Atkinson_Hyperlegible_Next({
+const atkinson = Atkinson_Hyperlegible({
   variable: "--font-atkinson",
   subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
+  // só a fonte do título (LCP no celular) é pré-carregada; a do texto chega logo depois
+  preload: false,
 });
 
 const baloo = Baloo_2({

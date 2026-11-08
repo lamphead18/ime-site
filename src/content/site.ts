@@ -45,14 +45,55 @@ export const mapaEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(
   `${site.endereco.rua}, ${site.endereco.cidade} - ${site.endereco.uf}`,
 )}&output=embed`;
 
-// VALIDAR: faixa etária de cada turma
-export const turmas = [
-  { nome: "Maternal", idade: "2 e 3 anos", etapa: "Educação infantil" },
-  { nome: "Jardim I", idade: "4 anos", etapa: "Educação infantil" },
-  { nome: "Jardim II", idade: "5 anos", etapa: "Educação infantil" },
-  { nome: "1º ano", idade: "6 anos", etapa: "Ensino fundamental" },
-  { nome: "2º ano", idade: "7 e 8 anos", etapa: "Ensino fundamental" },
+// VALIDAR: faixa etária e foco de cada turma (foco é texto provisório, alinhado à BNCC)
+export const etapas = [
+  {
+    nome: "Educação infantil",
+    turmas: [
+      {
+        nome: "Maternal",
+        idade: "2 e 3 anos",
+        idades: [2, 3],
+        foco: "Adaptação, rotina, fala e coordenação motora com brincadeiras sensoriais.",
+      },
+      {
+        nome: "Jardim I",
+        idade: "4 anos",
+        idades: [4],
+        foco: "Cores, formas, números e convivência em grupo.",
+      },
+      {
+        nome: "Jardim II",
+        idade: "5 anos",
+        idades: [5],
+        foco: "Letras e sons, coordenação fina e preparação para a alfabetização.",
+      },
+    ],
+  },
+  {
+    nome: "Ensino fundamental",
+    turmas: [
+      {
+        nome: "1º ano",
+        idade: "6 anos",
+        idades: [6],
+        foco: "Alfabetização: leitura, escrita e os primeiros cálculos.",
+      },
+      {
+        nome: "2º ano",
+        idade: "7 e 8 anos",
+        idades: [7, 8],
+        foco: "Leitura com autonomia, produção de textos e operações matemáticas.",
+      },
+    ],
+  },
 ];
+
+export const idadesAtendidas = etapas.flatMap((e) => e.turmas.flatMap((t) => t.idades));
+
+export function mensagemVaga(turma: string) {
+  return `Olá! Vim pelo site e gostaria de saber sobre vagas no ${turma} para ${site.anoMatricula}.`;
+}
 
 export const disciplinas = [
   "Português",

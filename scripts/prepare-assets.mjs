@@ -79,8 +79,13 @@ async function marca() {
     .resize(400, 400, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .toBuffer();
   const icon = await sharp(circle).composite([{ input: mark, gravity: "center" }]).png().toBuffer();
-  await sharp(icon).resize(512, 512).png({ palette: true }).toFile(path.join(OUT_APP, "icon.png"));
-  await sharp(icon).resize(180, 180).flatten({ background: "#ffffff" }).toFile(path.join(OUT_APP, "apple-icon.png"));
+  // 96px: múltiplo de 48, como o Google pede para o favicon nos resultados de busca
+  await sharp(icon).resize(96, 96).png({ palette: true }).toFile(path.join(OUT_APP, "icon.png"));
+  await sharp(icon)
+    .resize(180, 180)
+    .flatten({ background: "#ffffff" })
+    .png({ palette: true })
+    .toFile(path.join(OUT_APP, "apple-icon.png"));
 
   // Imagem de compartilhamento (WhatsApp, Facebook, Google)
   await sharp(path.join(SRC, FOTOS["professora-mesa"]))

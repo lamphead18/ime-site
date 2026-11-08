@@ -38,7 +38,7 @@ export function Header() {
       <Bandeirola className="h-2.5!" />
       <div className="mx-auto flex h-18 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
         <a href="#inicio" className="flex shrink-0 items-center gap-3">
-          <Image src={logo} alt="" width={56} height={44} className="h-11 w-auto" preload />
+          <Image src={logo} alt="" width={56} height={44} className="h-11 w-auto" loading="eager" />
           <span className="font-display text-lg leading-none font-bold">
             <span className="sr-only">{site.sigla}, </span>
             Instituto Mundo
