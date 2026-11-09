@@ -4,7 +4,7 @@
 export const site = {
   nome: 'Instituto Mundo da Educação',
   sigla: 'IME',
-  url: 'https://escolaime.com.br',
+  url: 'https://www.escolaime.com.br',
   descricao:
     'Escola de educação infantil e ensino fundamental em Ananindeua (PA), do Maternal ao 2º ano. Inglês para todas as idades, educação ambiental e experiência com crianças com TEA, TDAH e TDA. Matrículas abertas para 2027.',
   endereco: {
