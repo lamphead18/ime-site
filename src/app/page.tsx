@@ -25,6 +25,7 @@ const jsonLd = {
       logo: `${site.url}/icon.png`,
       image: `${site.url}/opengraph-image.jpg`,
       telephone: site.telefones.map((t) => t.e164),
+      email: site.email,
       address: {
         "@type": "PostalAddress",
         streetAddress: site.endereco.rua,

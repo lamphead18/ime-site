@@ -1,6 +1,6 @@
 import { mapaEmbed, mapaUrl, mensagens, site, whatsapp } from "@/content/site";
 import { Botao } from "./Botao";
-import { ClockIcon, InstagramIcon, PinIcon, WhatsAppIcon } from "./icons";
+import { ClockIcon, InstagramIcon, MailIcon, PinIcon, WhatsAppIcon } from "./icons";
 
 export function Contato() {
   return (
@@ -40,6 +40,12 @@ export function Contato() {
                 ))}
               </ul>
             </div>
+            <p className="flex gap-3">
+              <MailIcon className="mt-1 size-6 shrink-0 text-azul" />
+              <a href={`mailto:${site.email}`} className="break-all underline underline-offset-4">
+                {site.email}
+              </a>
+            </p>
             <p className="flex gap-3">
               <InstagramIcon className="mt-1 size-6 shrink-0 text-azul" />
               <a href={site.instagram.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
